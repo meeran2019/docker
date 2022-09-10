@@ -21,5 +21,8 @@ docker run -d image-name            -   To run in detach mode.
 docker run -e key=value image-name  -   To pass the environment variable.
 
 docker build -f custom-docker-file -t tags .    - To build image. 
+      . at end specifies current directory.
+
+
 
 
