@@ -1,4 +1,3 @@
-
 docker run image-name               -   To run a container.
 docker ps                           -   To list running containers.
 docker ps -a                        -   TO lisr running and exited containers.
@@ -11,15 +10,11 @@ docker exec                         -   To execute a command in container.
 -d                                  -   To run container in background or detach mode. 
 docker version                      -   To get version of docker installed.
 
-
 docker container ls                 -   To list running container.
 docker image ls                     -   To list images. 
 docker image ls | wc -l             -   Retuns the no of row. 
 docker rm $(docker ps -a -q)           -   To delete all containers.
-
 docker history image-name           -   To describe image layer details.
-
 docker run -p host-port:container-port -d image-name    - To run with different ports. 
-
-
-
+docker run -it image-name           -   For input terminal. 
+docker run -d image-name            -   To run in detach mode.
