@@ -1,1 +1,12 @@
-FROM 
+# Alpine Linux with OpenJDK JRE
+FROM openjdk:8-jre-alpine
+
+#Copy JAR file to container. 
+#COPY java-sample.jar /java-sample.jar
+
+ADD app.zip /app.zip
+
+# Run the jar file. 
+CMD [ "/usr/bin/java" ,"-jar","/.zip" ]
+
+
