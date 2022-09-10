@@ -33,3 +33,24 @@ ENV - used for future running container. cant change ENV directly during build.
 
 --build-arg key=value 
 
+---------------------------------------------------------------------------------------------------------
+
+CMD VS ENTRYPOINT: 
+
+    Used to execute first.
+
+    bash command - listens for input from terminal. If no input, exit the container.
+
+    In nginx or mysql, use the cmn which runs as process. 
+
+    ENTRYPOINT - Append 
+    CMD - Override from CLI.
+
+    --entrypoint=new-value in CLI.
+
+---------------------------------------------------------------------------------------------------------
+
+
+
+
+
