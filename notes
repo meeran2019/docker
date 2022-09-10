@@ -5,4 +5,5 @@ INTRODUCTION:
 
     Distributed environment have different components and services, it may cause compatibility issue between services and os.
     Have different environments and may not work in other environment.
+    Image is packaged and container is instance of image.
     

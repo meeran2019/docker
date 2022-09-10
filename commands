@@ -1,0 +1,4 @@
+
+docker run image-name               -   To run a container.
+docker ps                           -   To list running containers.
+
