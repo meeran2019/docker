@@ -17,5 +17,5 @@ docker image ls                     -   To list images.
 docker image ls | wc -l             -   Retuns the no of row. 
 docker rm $(docker ps -a)           -   To delete all containers.
 
-
+docker history image-name           -   To describe image layer details.
 

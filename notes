@@ -6,4 +6,30 @@ INTRODUCTION:
     Distributed environment have different components and services, it may cause compatibility issue between services and os.
     Have different environments and may not work in other environment.
     Image is packaged and container is instance of image.
-    
+
+---------------------------------------------------------------------------------------------------------
+DOCKER IMAGE: 
+---------------------------------------------------------------------------------------------------------
+
+Dockerfile      -   Write the instruction with arguments to create image. 
+
+Instructions: 
+
+    FROM 
+    RUN 
+    COPY 
+    ADD 
+    CMD 
+    ENTRYPOINT 
+    MAINTENER   (deprecated)
+    LABEL 
+    WORKDIR 
+    ENV 
+    EXPOSE 
+    ARG 
+
+ARG - used for building docker image. It is not available for running container. 
+ENV - used for future running container. cant change ENV directly during build. 
+
+--build-arg key=value 
+
