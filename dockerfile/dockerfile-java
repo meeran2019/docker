@@ -7,6 +7,6 @@ FROM openjdk:8-jre-alpine
 ADD app.zip /app.zip
 
 # Run the jar file. 
-CMD [ "/usr/bin/java" ,"-jar","/.zip" ]
+CMD [ "/usr/bin/java" ,"-jar","/app.zip" ]
 
 
