@@ -15,18 +15,29 @@ Dockerfile      -   Write the instruction with arguments to create image.
 
 Instructions: 
 
-    FROM 
-    RUN 
-    COPY 
-    ADD 
-    CMD 
-    ENTRYPOINT 
-    MAINTENER   (deprecated)
-    LABEL 
-    WORKDIR 
-    ENV 
-    EXPOSE 
-    ARG 
+    FROM        -   Base Image 
+    RUN         -   To run linux commands 
+    COPY        -   Copy from host to container.
+        COPY [--chown=<user>:<group>] <src>... <dest>
+    ADD         -   Copy from host to container. Untar file and download from URL. 
+        ADD [--chown=<user>:<group>] <src>... <dest>
+    CMD         -   Override from CLI. 
+    ENTRYPOINT  -   By default append but override using entrypoint in CLI. 
+    MAINTENER   -   Developer (deprecated)
+    LABEL       -   Additional information
+        LABEL   key1=value1 \
+                key2=value2
+    WORKDIR     -   Current working directory.
+    ENV         -   Environment variable which pass as -e in CLI.
+    EXPOSE      -   Container port exposed. 
+        EXPOSE 80 or EXPOSE 80/tcp 
+    ARG         -   Argument passed which used in image build only. --build-args in CLI.
+    VOLUME      -   Map to host volume for permanent data. 
+        volume ["/data"]    -   used to mount volume. 
+    USER        -   Run as non root user. 
+    ONBUILD     -   Parent gives instruction to child. 
+    STOPSIGNAL  -
+
 
 ARG - used for building docker image. It is not available for running container. 
 ENV - used for future running container. cant change ENV directly during build. 
@@ -49,3 +60,17 @@ CMD VS ENTRYPOINT:
     --entrypoint=new-value in CLI.
 
 ---------------------------------------------------------------------------------------------------------
+
+DockerFile Best Practices: 
+
+    1. Run multiple commands in single layer using &&. 
+            RUN yum update && yum install package.
+
+    2. Use multiple stage.
+
+            FROM ubuntu AS build.
+
+            FROM ubuntu 
+            COPY --from=build 
+
+    3. 
