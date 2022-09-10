@@ -15,7 +15,11 @@ docker version                      -   To get version of docker installed.
 docker container ls                 -   To list running container.
 docker image ls                     -   To list images. 
 docker image ls | wc -l             -   Retuns the no of row. 
-docker rm $(docker ps -a)           -   To delete all containers.
+docker rm $(docker ps -a -q)           -   To delete all containers.
 
 docker history image-name           -   To describe image layer details.
+
+docker run -p host-port:container-port -d image-name    - To run with different ports. 
+
+
 
