@@ -1,3 +1,5 @@
+docker logs container-name          -   To check stopped container logs
+docker logs container-name --follow -   To check logs in running conainer (real time)
 docker run image-name               -   To run a container.
 docker ps                           -   To list running containers.
 docker ps -a                        -   TO lisr running and exited containers.
