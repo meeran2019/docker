@@ -48,6 +48,10 @@ Instructions:
     USER        -   Run as non root user.
         USER UID:GID
     ONBUILD     -   Parent gives instruction to child. 
+                -   First create a dockerfile with ONBUILD INSTRUCTION arguments. (This onbuild wont execute)
+                -   Then use this image as base image for another docker file.
+                -   ONBUILD will execute when dockerfile is running. 
+                
     STOPSIGNAL  -
 
 
