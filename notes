@@ -13,6 +13,16 @@ DOCKER IMAGE:
 
 Dockerfile      -   Write the instruction with arguments to create image. 
 
+INSTRUCTION arguments   -   Instruction is not case sensitive but recommended to use in UPPER for easy reference. 
+Only ARG can place before FROM instruction.
+Variable is referenced by $variable_name or ${variable_name}_example.
+.dockerignore - It is like .gitignore which is used to exclude mentioned files.
+Multiple CMD can place in dockerfile but it takes only last CMD for execution.
+Dockerfile should have atleast one CMD or ENTRYPOINT. 
+${variable:-word} -> If variable is set then use that else use "word".
+${variable:+word} -> If variable is set then use word else empty.
+
+
 Instructions: 
 
     FROM        -   Base Image 
@@ -31,10 +41,12 @@ Instructions:
     ENV         -   Environment variable which pass as -e in CLI.
     EXPOSE      -   Container port exposed. 
         EXPOSE 80 or EXPOSE 80/tcp 
+        By default expose TCP. for UDP, require to mention 80/udp.
     ARG         -   Argument passed which used in image build only. --build-args in CLI.
     VOLUME      -   Map to host volume for permanent data. 
         volume ["/data"]    -   used to mount volume. 
-    USER        -   Run as non root user. 
+    USER        -   Run as non root user.
+        USER UID:GID
     ONBUILD     -   Parent gives instruction to child. 
     STOPSIGNAL  -
 
